@@ -39,7 +39,23 @@ a { text-decoration: none; color: inherit; }
 .nav-links { display: flex; gap: 24px; flex: 1; }
 .nav-links a { font-size: 14px; color: var(--text-light); font-weight: 500; transition: color .2s; }
 .nav-links a:hover { color: var(--primary); }
-.nav-actions { display: flex; gap: 8px; }
+.nav-actions { display: flex; gap: 8px; align-items: center; }
+
+/* Google Translate widget */
+#google_translate_element { display: flex; align-items: center; }
+#google_translate_element .goog-te-gadget-simple {
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  padding: 4px 8px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  background: var(--white) !important;
+  color: var(--text) !important;
+}
+#google_translate_element .goog-te-gadget-simple span { color: var(--text) !important; }
+#google_translate_element .goog-te-gadget-simple .goog-te-menu-value span { color: var(--text) !important; }
+.goog-te-banner-frame { display: none !important; }
+body { top: 0 !important; }
 
 /* HERO */
 .hero { background: var(--white); padding: 72px 0 56px; }
