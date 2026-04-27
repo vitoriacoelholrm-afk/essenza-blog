@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artigos — Essenza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="artigos.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">Ess<span>enza</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="artigos.html" class="active">Artigos</a>
+        <a href="#">Categorias</a>
+        <a href="#">Sobre</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Entrar</a>
+        <a href="login.html" class="btn btn-primary">Cadastrar</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Início</a>
+    <a href="artigos.html" class="active">Artigos</a>
+    <a href="#">Categorias</a>
+    <a href="#">Sobre</a>
+    <div class="mobile-actions">
+      <a href="login.html" class="btn btn-outline">Entrar</a>
+      <a href="login.html" class="btn btn-primary">Cadastrar</a>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Início</a>
+        <span>›</span>
+        <span>Artigos</span>
+      </div>
+      <h1>Todos os Artigos</h1>
+      <p>Conteúdo prático sobre gestão de processos, operações e melhoria contínua.</p>
+
+      <!-- SEARCH -->
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Buscar artigos..." />
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div class="container artigos-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h3 class="sidebar-title">Categorias</h3>
+        <ul class="category-list">
+          <li>
+            <a href="#" class="cat-item active" data-cat="todos">
+              <span class="cat-item-icon">📌</span>
+              <span class="cat-item-label">Todos</span>
+              <span class="cat-item-count">12</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="cat-item" data-cat="processos">
+              <span class="cat-item-icon">🔁</span>
+              <span class="cat-item-label">Processos</span>
+              <span class="cat-item-count">4</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="cat-item" data-cat="operacoes">
+              <span class="cat-item-icon">⚙️</span>
+              <span class="cat-item-label">Operações</span>
+              <span class="cat-item-count">3</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="cat-item" data-cat="pessoas">
+              <span class="cat-item-icon">👥</span>
+              <span class="cat-item-label">Pessoas</span>
+              <span class="cat-item-count">2</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="cat-item" data-cat="indicadores">
+              <span class="cat-item-icon">📊</span>
+              <span class="cat-item-label">Indicadores</span>
+              <span class="cat-item-count">5</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="cat-item" data-cat="melhoria">
+              <span class="cat-item-icon">🔄</span>
+              <span class="cat-item-label">Melhoria Contínua</span>
+              <span class="cat-item-count">4</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="cat-item" data-cat="tecnologia">
+              <span class="cat-item-icon">🤖</span>
+              <span class="cat-item-label">Tecnologia</span>
+              <span class="cat-item-count">3</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="cat-item" data-cat="estrategia">
+              <span class="cat-item-icon">🏆</span>
+              <span class="cat-item-label">Estratégia</span>
+              <span class="cat-item-count">2</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="cat-item" data-cat="qualidade">
+              <span class="cat-item-icon">📋</span>
+              <span class="cat-item-label">Qualidade</span>
+              <span class="cat-item-count">3</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- DESTAQUE SIDEBAR -->
+      <div class="sidebar-card">
+        <h3 class="sidebar-title">Mais Lidos</h3>
+        <ul class="top-posts">
+          <li>
+            <a href="post.html">
+              <span class="tp-num">01</span>
+              <span class="tp-title">Como mapear processos do zero: guia completo</span>
+            </a>
+          </li>
+          <li>
+            <a href="post.html">
+              <span class="tp-num">02</span>
+              <span class="tp-title">KPIs essenciais para gestão de processos</span>
+            </a>
+          </li>
+          <li>
+            <a href="post.html">
+              <span class="tp-num">03</span>
+              <span class="tp-title">Os 7 desperdícios do Lean Manufacturing</span>
+            </a>
+          </li>
+          <li>
+            <a href="post.html">
+              <span class="tp-num">04</span>
+              <span class="tp-title">RPA: quando automatizar e quando não</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- NEWSLETTER SIDEBAR -->
+      <div class="sidebar-card sidebar-newsletter">
+        <h3 class="sidebar-title">Newsletter</h3>
+        <p>Receba os melhores artigos semanalmente.</p>
+        <form class="sidebar-form">
+          <input type="email" placeholder="Seu e-mail" />
+          <button type="submit" class="btn btn-primary">Inscrever</button>
+        </form>
+      </div>
+    </aside>
+
+    <!-- ARTICLES GRID -->
+    <main class="artigos-main">
+
+      <div class="artigos-header">
+        <span id="resultCount" class="result-count">12 artigos encontrados</span>
+        <div class="sort-bar">
+          <label for="sortSelect">Ordenar por:</label>
+          <select id="sortSelect">
+            <option>Mais recentes</option>
+            <option>Mais antigos</option>
+            <option>A-Z</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="artigos-grid" id="artigosGrid">
+
+        <article class="artigo-card" data-cat="processos">
+          <div class="artigo-img" style="background:#2E7D9A22">
+            <span class="artigo-emoji">📋</span>
+          </div>
+          <div class="artigo-body">
+            <span class="tag">Processos</span>
+            <h3><a href="post.html">Como mapear processos do zero: guia completo para iniciantes</a></h3>
+            <p>Aprenda a identificar, documentar e otimizar seus processos empresariais com uma metodologia simples e eficaz.</p>
+            <div class="post-meta">
+              <div class="author"><div class="avatar">A</div><span>Autora</span></div>
+              <span class="date">15 Abr 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="artigo-card" data-cat="melhoria">
+          <div class="artigo-img" style="background:#5A8A6E22">
+            <span class="artigo-emoji">🔄</span>
+          </div>
+          <div class="artigo-body">
+            <span class="tag">Melhoria Contínua</span>
+            <h3><a href="post.html">Os 7 desperdícios do Lean Manufacturing e como eliminá-los</a></h3>
+            <p>Entenda os conceitos fundamentais do Lean e aplique na sua operação hoje mesmo.</p>
+            <div class="post-meta">
+              <div class="author"><div class="avatar">A</div><span>Autora</span></div>
+              <span class="date">10 Abr 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="artigo-card" data-cat="indicadores">
+          <div class="artigo-img" style="background:#E8834A22">
+            <span class="artigo-emoji">📈</span>
+          </div>
+          <div class="artigo-body">
+            <span class="tag">Indicadores</span>
+            <h3><a href="post.html">KPIs essenciais para gestão de processos: o que medir e por quê</a></h3>
+            <p>Definir os indicadores certos é o primeiro passo para uma gestão baseada em dados.</p>
+            <div class="post-meta">
+              <div class="author"><div class="avatar">A</div><span>Autora</span></div>
+              <span class="date">05 Abr 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="artigo-card" data-cat="tecnologia">
+          <div class="artigo-img" style="background:#2E7D9A22">
+            <span class="artigo-emoji">🤖</span>
+          </div>
+          <div class="artigo-body">
+            <span class="tag">Tecnologia</span>
+            <h3><a href="post.html">RPA: quando automatizar processos e quando não automatizar</a></h3>
+            <p>A automação não é a solução para tudo — saiba identificar os processos certos.</p>
+            <div class="post-meta">
+              <div class="author"><div class="avatar">A</div><span>Autora</span></div>
+              <span class="date">01 Abr 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="artigo-card" data-cat="qualidade">
+          <div class="artigo-img" style="background:#5A8A6E22">
+            <span class="artigo-emoji">🏅</span>
+          </div>
+          <div class="artigo-body">
+            <span class="tag">Qualidade</span>
+            <h3><a href="post.html">Preparando sua empresa para a certificação ISO 9001:2015</a></h3>
+            <p>Um roteiro prático para implementar um Sistema de Gestão da Qualidade eficaz.</p>
+            <div class="post-meta">
+              <div class="author"><div class="avatar">A</div><span>Autora</span></div>
+              <span class="date">28 Mar 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="artigo-card" data-cat="pessoas">
+          <div class="artigo-img" style="background:#E8834A22">
+            <span class="artigo-emoji">👥</span>
+          </div>
+          <div class="artigo-body">
+            <span class="tag">Pessoas</span>
+            <h3><a href="post.html">Cultura de melhoria contínua: como engajar sua equipe</a></h3>
+            <p>Técnicas de liderança para criar uma equipe comprometida com a excelência operacional.</p>
+            <div class="post-meta">
+              <div class="author"><div class="avatar">A</div><span>Autora</span></div>
+              <span class="date">22 Mar 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="artigo-card" data-cat="estrategia">
+          <div class="artigo-img" style="background:#2E7D9A22">
+            <span class="artigo-emoji">🏆</span>
+          </div>
+          <div class="artigo-body">
+            <span class="tag">Estratégia</span>
+            <h3><a href="post.html">OKRs na prática: como definir metas que movem a empresa</a></h3>
+            <p>Entenda como usar OKRs para alinhar equipes e alcançar resultados extraordinários.</p>
+            <div class="post-meta">
+              <div class="author"><div class="avatar">A</div><span>Autora</span></div>
+              <span class="date">18 Mar 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="artigo-card" data-cat="operacoes">
+          <div class="artigo-img" style="background:#5A8A6E22">
+            <span class="artigo-emoji">⚙️</span>
+          </div>
+          <div class="artigo-body">
+            <span class="tag">Operações</span>
+            <h3><a href="post.html">Gestão de estoque: como reduzir perdas e aumentar eficiência</a></h3>
+            <p>Métodos práticos para controlar o estoque e diminuir desperdícios na operação.</p>
+            <div class="post-meta">
+              <div class="author"><div class="avatar">A</div><span>Autora</span></div>
+              <span class="date">14 Mar 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="artigo-card" data-cat="processos">
+          <div class="artigo-img" style="background:#E8834A22">
+            <span class="artigo-emoji">📐</span>
+          </div>
+          <div class="artigo-body">
+            <span class="tag">Processos</span>
+            <h3><a href="post.html">BPMN: o guia definitivo para modelar processos de negócio</a></h3>
+            <p>Aprenda a notação padrão mundial para modelagem de processos empresariais.</p>
+            <div class="post-meta">
+              <div class="author"><div class="avatar">A</div><span>Autora</span></div>
+              <span class="date">08 Mar 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="artigo-card" data-cat="indicadores">
+          <div class="artigo-img" style="background:#2E7D9A22">
+            <span class="artigo-emoji">📉</span>
+          </div>
+          <div class="artigo-body">
+            <span class="tag">Indicadores</span>
+            <h3><a href="post.html">Como criar um dashboard de desempenho do zero</a></h3>
+            <p>Passo a passo para montar painéis de indicadores que geram decisões mais rápidas.</p>
+            <div class="post-meta">
+              <div class="author"><div class="avatar">A</div><span>Autora</span></div>
+              <span class="date">02 Mar 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="artigo-card" data-cat="melhoria">
+          <div class="artigo-img" style="background:#5A8A6E22">
+            <span class="artigo-emoji">🎯</span>
+          </div>
+          <div class="artigo-body">
+            <span class="tag">Melhoria Contínua</span>
+            <h3><a href="post.html">PDCA na prática: resolvendo problemas com método</a></h3>
+            <p>Veja como aplicar o ciclo PDCA para resolver problemas reais no dia a dia da empresa.</p>
+            <div class="post-meta">
+              <div class="author"><div class="avatar">A</div><span>Autora</span></div>
+              <span class="date">24 Fev 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="artigo-card" data-cat="tecnologia">
+          <div class="artigo-img" style="background:#E8834A22">
+            <span class="artigo-emoji">💡</span>
+          </div>
+          <div class="artigo-body">
+            <span class="tag">Tecnologia</span>
+            <h3><a href="post.html">Transformação digital: por onde começar nas pequenas empresas</a></h3>
+            <p>Um guia acessível para iniciar a jornada digital sem grandes investimentos.</p>
+            <div class="post-meta">
+              <div class="author"><div class="avatar">A</div><span>Autora</span></div>
+              <span class="date">17 Fev 2026</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- EMPTY STATE -->
+      <div class="empty-state" id="emptyState" style="display:none">
+        <span>🔍</span>
+        <p>Nenhum artigo encontrado para esta busca.</p>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="brand">Ess<span>enza</span></div>
+      <p class="footer-text">© 2026 Essenza. Todos os direitos reservados.</p>
+      <div class="footer-links">
+        <a href="#">Privacidade</a>
+        <a href="#">Termos</a>
+        <a href="#">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FILTRO POR CATEGORIA
+    const catItems = document.querySelectorAll('.cat-item');
+    const cards = document.querySelectorAll('.artigo-card');
+    const resultCount = document.getElementById('resultCount');
+    const emptyState = document.getElementById('emptyState');
+    const searchInput = document.getElementById('searchInput');
+
+    function filtrar() {
+      const catAtiva = document.querySelector('.cat-item.active')?.dataset.cat || 'todos';
+      const busca = searchInput.value.toLowerCase().trim();
+      let visiveis = 0;
+
+      cards.forEach(card => {
+        const cat = card.dataset.cat;
+        const texto = card.querySelector('h3').textContent.toLowerCase();
+        const matchCat = catAtiva === 'todos' || cat === catAtiva;
+        const matchBusca = busca === '' || texto.includes(busca);
+
+        if (matchCat && matchBusca) {
+          card.style.display = '';
+          visiveis++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      resultCount.textContent = `${visiveis} artigo${visiveis !== 1 ? 's' : ''} encontrado${visiveis !== 1 ? 's' : ''}`;
+      emptyState.style.display = visiveis === 0 ? 'flex' : 'none';
+    }
+
+    catItems.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        catItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        filtrar();
+      });
+    });
+
+    searchInput.addEventListener('input', filtrar);
+
+    // MENU MOBILE
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
