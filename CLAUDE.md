@@ -22,10 +22,10 @@ python -m http.server 3002 --directory blog-gestao
 | `blog-gestao/artigos.html` | Listagem de artigos com sidebar, busca e filtro por categoria | Completo |
 | `blog-gestao/post.html` | Post individual com cover, conteúdo rico e metadados | Completo |
 | `blog-gestao/login.html` | Tela de login/cadastro | Completo (sem backend) |
-| `blog-gestao/sobre.html` | Página Sobre a autora | **A criar** |
+| `blog-gestao/sobre.html` | Página Sobre a autora: hero, especialidades, valores, CTA de contato | Completo |
 | `blog-gestao/admin.html` | Painel admin para publicar posts | **A criar (Fase 2)** |
 | `blog-gestao/style.css` | Estilos globais — usar variáveis CSS, nunca hardcodar cores | — |
-| `blog-gestao/artigos.css` | Estilos específicos da página de artigos e menu mobile | — |
+| `blog-gestao/artigos.css` | Estilos específicos da página de artigos | — |
 
 ## Categorias do Blog
 
@@ -77,8 +77,10 @@ Todas as cores são variáveis CSS em `:root` dentro de `style.css`. **Nunca usa
 - Busca em tempo real na página de artigos
 - Filtro por categoria (sidebar com 8 categorias)
 - Grade de artigos 3 por linha
-- Menu mobile com hamburger (artigos.html — replicar para index e post)
-- Links do navbar corrigidos em todas as páginas
+- Menu mobile com hamburger em todas as páginas (index, artigos, post, sobre)
+- CSS do hamburger/menu mobile global em `style.css`
+- Links do navbar corrigidos e padronizados em todas as páginas
+- Novas páginas já herdam o padrão ao importar `style.css`
 
 ## Plano de Evolução
 
@@ -87,8 +89,8 @@ Todas as cores são variáveis CSS em `:root` dentro de `style.css`. **Nunca usa
 | # | Etapa | Status |
 |---|---|---|
 | 1 | Corrigir links do navbar | ✅ Concluído |
-| 2 | Criar página Sobre (`sobre.html`) | Pendente |
-| 3 | Menu mobile no `index.html` e `post.html` | Pendente |
+| 2 | Criar página Sobre (`sobre.html`) | ✅ Concluído |
+| 3 | Menu mobile no `index.html` e `post.html` | ✅ Concluído |
 | 4 | Implementar ordenação de artigos | Pendente |
 | 5 | Botão "Carregar mais" na homepage | Pendente |
 
