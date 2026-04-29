@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato — Essenza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .pagina-simples { padding: 56px 0 80px; }
+    .pagina-simples h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+    .pagina-simples .subtitulo { color: var(--text-light); font-size: 15px; margin-bottom: 40px; }
+    .contato-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .contato-info h2 { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+    .contato-info p { font-size: 15px; color: #3D3D3D; line-height: 1.8; margin-bottom: 20px; }
+    .contato-item { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--text-light); margin-bottom: 12px; }
+    .contato-item span { font-size: 20px; }
+    .contato-form { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; }
+    .contato-form h2 { font-size: 18px; font-weight: 600; margin-bottom: 20px; }
+    .contato-form .form-group { margin-bottom: 16px; }
+    .contato-form label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 6px; }
+    .contato-form input,
+    .contato-form textarea { width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px; font-family: inherit; color: var(--text); background: var(--bg); transition: border-color .2s; }
+    .contato-form input:focus,
+    .contato-form textarea:focus { outline: none; border-color: var(--primary); background: var(--white); }
+    .contato-form textarea { resize: vertical; min-height: 120px; }
+    .contato-form .btn-primary { width: 100%; justify-content: center; padding: 12px; font-size: 15px; margin-top: 4px; }
+    @media (max-width: 768px) { .contato-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">Ess<span>enza</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="artigos.html">Artigos</a>
+        <a href="artigos.html">Categorias</a>
+        <a href="sobre.html">Sobre</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Entrar</a>
+        <a href="login.html?tab=cadastro" class="btn btn-primary">Cadastrar</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Início</a>
+    <a href="artigos.html">Artigos</a>
+    <a href="artigos.html">Categorias</a>
+    <a href="sobre.html">Sobre</a>
+    <div class="mobile-actions">
+      <a href="login.html" class="btn btn-outline">Entrar</a>
+      <a href="login.html?tab=cadastro" class="btn btn-primary">Cadastrar</a>
+    </div>
+  </div>
+
+  <main class="pagina-simples">
+    <div class="container" style="max-width: 900px;">
+      <h1>Contato</h1>
+      <p class="subtitulo">Sugestões, parcerias ou dúvidas — será um prazer responder.</p>
+
+      <div class="contato-grid">
+        <div class="contato-info">
+          <h2>Fale comigo</h2>
+          <p>Estou sempre aberta a sugestões de temas, feedbacks sobre o blog ou oportunidades de colaboração.</p>
+          <div class="contato-item">
+            <span>📧</span>
+            <a href="mailto:vitoriacoelholrm@gmail.com" style="color: var(--primary);">vitoriacoelholrm@gmail.com</a>
+          </div>
+          <div class="contato-item">
+            <span>⏱️</span>
+            <span>Respondo em até 2 dias úteis</span>
+          </div>
+        </div>
+
+        <div class="contato-form">
+          <h2>Envie uma mensagem</h2>
+          <form>
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" placeholder="Seu nome" />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" placeholder="seu@email.com" />
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" placeholder="Escreva sua mensagem..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="brand">Ess<span>enza</span></div>
+      <p class="footer-text">© 2026 Essenza. Todos os direitos reservados.</p>
+      <div class="footer-links">
+        <a href="privacidade.html">Privacidade</a>
+        <a href="termos.html">Termos</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

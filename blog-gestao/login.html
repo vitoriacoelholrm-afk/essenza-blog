@@ -8,30 +8,75 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .auth-tabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+    .auth-tab { flex: 1; text-align: center; padding: 10px; font-size: 14px; font-weight: 500; color: var(--text-light); cursor: pointer; border-bottom: 2px solid transparent; transition: all .2s; }
+    .auth-tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+    .auth-form { display: none; }
+    .auth-form.active { display: block; }
+  </style>
 </head>
 <body>
   <div class="auth-page">
     <div class="auth-card">
       <a href="index.html" class="brand">Ess<span>enza</span></a>
-      <p class="auth-subtitle">Entre na sua conta para continuar</p>
 
-      <form>
-        <div class="form-group">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" placeholder="seu@email.com" />
-        </div>
-        <div class="form-group">
-          <label for="password">Senha</label>
-          <input type="password" id="password" placeholder="••••••••" />
-        </div>
-        <button type="submit" class="btn btn-primary">Entrar</button>
-      </form>
+      <!-- ABAS -->
+      <div class="auth-tabs">
+        <div class="auth-tab active" id="tab-login" onclick="trocarAba('login')">Entrar</div>
+        <div class="auth-tab" id="tab-cadastro" onclick="trocarAba('cadastro')">Cadastrar</div>
+      </div>
 
-      <div class="auth-divider">ou</div>
+      <!-- FORMULÁRIO DE LOGIN -->
+      <div class="auth-form active" id="form-login">
+        <form>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="seu@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="password">Senha</label>
+            <input type="password" id="password" placeholder="••••••••" />
+          </div>
+          <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+        <p class="auth-footer" style="margin-top:16px"><a href="#">Esqueceu sua senha?</a></p>
+      </div>
 
-      <p class="auth-footer">Não tem conta? <a href="#">Cadastre-se grátis</a></p>
-      <p class="auth-footer" style="margin-top:8px"><a href="#">Esqueceu sua senha?</a></p>
+      <!-- FORMULÁRIO DE CADASTRO -->
+      <div class="auth-form" id="form-cadastro">
+        <form>
+          <div class="form-group">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" placeholder="Seu nome" />
+          </div>
+          <div class="form-group">
+            <label for="email-cad">E-mail</label>
+            <input type="email" id="email-cad" placeholder="seu@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="password-cad">Senha</label>
+            <input type="password" id="password-cad" placeholder="Mínimo 6 caracteres" />
+          </div>
+          <button type="submit" class="btn btn-primary">Criar conta grátis</button>
+        </form>
+      </div>
+
     </div>
   </div>
+
+  <script>
+    function trocarAba(aba) {
+      document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+      document.getElementById('tab-' + aba).classList.add('active');
+      document.getElementById('form-' + aba).classList.add('active');
+    }
+
+    // Abre aba de cadastro se vier via ?tab=cadastro
+    if (new URLSearchParams(window.location.search).get('tab') === 'cadastro') {
+      trocarAba('cadastro');
+    }
+  </script>
 </body>
 </html>

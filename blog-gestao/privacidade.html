@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidade — Essenza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .pagina-simples { padding: 56px 0 80px; }
+    .pagina-simples h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+    .pagina-simples .subtitulo { color: var(--text-light); font-size: 15px; margin-bottom: 40px; }
+    .pagina-simples h2 { font-size: 18px; font-weight: 600; margin: 32px 0 10px; }
+    .pagina-simples p { font-size: 15px; color: #3D3D3D; line-height: 1.8; margin-bottom: 14px; }
+    .aviso { background: #2E7D9A0D; border-left: 4px solid var(--primary); border-radius: 0 8px 8px 0; padding: 14px 20px; margin-bottom: 32px; font-size: 14px; color: var(--text-light); }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">Ess<span>enza</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="artigos.html">Artigos</a>
+        <a href="artigos.html">Categorias</a>
+        <a href="sobre.html">Sobre</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Entrar</a>
+        <a href="login.html?tab=cadastro" class="btn btn-primary">Cadastrar</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Início</a>
+    <a href="artigos.html">Artigos</a>
+    <a href="artigos.html">Categorias</a>
+    <a href="sobre.html">Sobre</a>
+    <div class="mobile-actions">
+      <a href="login.html" class="btn btn-outline">Entrar</a>
+      <a href="login.html?tab=cadastro" class="btn btn-primary">Cadastrar</a>
+    </div>
+  </div>
+
+  <main class="pagina-simples">
+    <div class="container" style="max-width: 760px;">
+      <h1>Política de Privacidade</h1>
+      <p class="subtitulo">Última atualização: abril de 2026</p>
+
+      <div class="aviso">Esta página está em construção. O conteúdo completo será adicionado em breve.</div>
+
+      <h2>1. Informações que coletamos</h2>
+      <p>Coletamos informações que você nos fornece diretamente, como nome e e-mail ao criar uma conta ou assinar nossa newsletter.</p>
+
+      <h2>2. Como usamos suas informações</h2>
+      <p>Usamos suas informações para enviar conteúdo relevante sobre gestão de processos e para melhorar a experiência no blog.</p>
+
+      <h2>3. Compartilhamento de dados</h2>
+      <p>Não vendemos nem compartilhamos seus dados pessoais com terceiros sem o seu consentimento.</p>
+
+      <h2>4. Seus direitos</h2>
+      <p>Você pode solicitar a exclusão dos seus dados a qualquer momento entrando em contato pelo e-mail disponível na página de contato.</p>
+
+      <h2>5. Contato</h2>
+      <p>Dúvidas sobre esta política? <a href="contato.html" style="color: var(--primary);">Fale conosco</a>.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="brand">Ess<span>enza</span></div>
+      <p class="footer-text">© 2026 Essenza. Todos os direitos reservados.</p>
+      <div class="footer-links">
+        <a href="privacidade.html">Privacidade</a>
+        <a href="termos.html">Termos</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
