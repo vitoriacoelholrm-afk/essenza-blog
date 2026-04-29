@@ -385,6 +385,11 @@
         <p>Nenhum artigo encontrado para esta busca.</p>
       </div>
 
+      <!-- CARREGAR MAIS -->
+      <div class="load-more" id="loadMore" style="display:none">
+        <button class="btn btn-outline" id="btnCarregarMais">Carregar mais artigos</button>
+      </div>
+
     </main>
   </div>
 
@@ -402,46 +407,66 @@
   </footer>
 
   <script>
-    // FILTRO POR CATEGORIA
+    const POR_PAGINA = 6;
+    let exibindo = POR_PAGINA;
+
     const catItems = document.querySelectorAll('.cat-item');
     const cards = document.querySelectorAll('.artigo-card');
     const resultCount = document.getElementById('resultCount');
     const emptyState = document.getElementById('emptyState');
+    const loadMore = document.getElementById('loadMore');
+    const btnCarregarMais = document.getElementById('btnCarregarMais');
     const searchInput = document.getElementById('searchInput');
 
     function filtrar() {
       const catAtiva = document.querySelector('.cat-item.active')?.dataset.cat || 'todos';
       const busca = searchInput.value.toLowerCase().trim();
-      let visiveis = 0;
 
+      // Filtra os cards que correspondem à busca/categoria
+      const matching = [];
       cards.forEach(card => {
         const cat = card.dataset.cat;
         const texto = card.querySelector('h3').textContent.toLowerCase();
         const matchCat = catAtiva === 'todos' || cat === catAtiva;
         const matchBusca = busca === '' || texto.includes(busca);
-
-        if (matchCat && matchBusca) {
-          card.style.display = '';
-          visiveis++;
-        } else {
-          card.style.display = 'none';
-        }
+        card.style.display = 'none';
+        if (matchCat && matchBusca) matching.push(card);
       });
 
-      resultCount.textContent = `${visiveis} artigo${visiveis !== 1 ? 's' : ''} encontrado${visiveis !== 1 ? 's' : ''}`;
-      emptyState.style.display = visiveis === 0 ? 'flex' : 'none';
+      // Exibe apenas até o limite atual
+      matching.slice(0, exibindo).forEach(card => card.style.display = '');
+
+      // Atualiza contagem e estados
+      resultCount.textContent = `${matching.length} artigo${matching.length !== 1 ? 's' : ''} encontrado${matching.length !== 1 ? 's' : ''}`;
+      emptyState.style.display = matching.length === 0 ? 'flex' : 'none';
+      loadMore.style.display = exibindo < matching.length ? 'block' : 'none';
     }
 
+    // Filtro por categoria — reseta paginação
     catItems.forEach(item => {
       item.addEventListener('click', e => {
         e.preventDefault();
         catItems.forEach(i => i.classList.remove('active'));
         item.classList.add('active');
+        exibindo = POR_PAGINA;
         filtrar();
       });
     });
 
-    searchInput.addEventListener('input', filtrar);
+    // Busca — reseta paginação
+    searchInput.addEventListener('input', () => {
+      exibindo = POR_PAGINA;
+      filtrar();
+    });
+
+    // Carregar mais
+    btnCarregarMais.addEventListener('click', () => {
+      exibindo += POR_PAGINA;
+      filtrar();
+    });
+
+    // Inicializa
+    filtrar();
 
     // MENU MOBILE
     const hamburger = document.getElementById('hamburger');
