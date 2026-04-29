@@ -25,8 +25,23 @@
         <a href="login.html" class="btn btn-outline">Entrar</a>
         <a href="login.html" class="btn btn-primary">Cadastrar</a>
       </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Início</a>
+    <a href="artigos.html" class="active">Artigos</a>
+    <a href="artigos.html">Categorias</a>
+    <a href="sobre.html">Sobre</a>
+    <div class="mobile-actions">
+      <a href="login.html" class="btn btn-outline">Entrar</a>
+      <a href="login.html" class="btn btn-primary">Cadastrar</a>
+    </div>
+  </div>
 
   <main class="post-page">
     <div class="container">
@@ -98,6 +113,15 @@
     </div>
   </footer>
 
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+  </script>
 
   <script type="text/javascript">
     function googleTranslateElementInit() {
